@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <!-- Tailwind CSS CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+  <div class="min-h-screen flex">
+    
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between">
+      <div>
+        <!-- App Logo / Header -->
+        <div class="h-16 flex items-center px-6 border-b border-slate-100 gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          </div>
+          <span class="font-bold text-lg text-slate-900">Control Hub</span>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="p-4 space-y-1">
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg bg-blue-50 text-blue-600">
+            <i data-lucide="home" class="w-4 h-4"></i>
+            Overview
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+            Analytics
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+            <i data-lucide="users" class="w-4 h-4"></i>
+            Users
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+            <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+            Projects
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors">
+            <i data-lucide="settings" class="w-4 h-4"></i>
+            Settings
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile / Footer -->
+      <div class="p-4 border-t border-slate-100 flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-semibold text-sm">
+          DQ
+        </div>
+        <div class="flex-1 min-w-0">
+          <p class="text-sm font-medium text-slate-900 truncate">Duck Quack</p>
+          <p class="text-xs text-slate-500 truncate">admin@example.com</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-1 flex flex-col min-w-0 overflow-x-hidden">
+      
+      <!-- Top Navigation Header -->
+      <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8">
+        <div class="flex items-center gap-4 w-1/3">
+          <div class="relative w-full">
+            <i data-lucide="search" class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input type="text" placeholder="Search..." class="w-full pl-9 pr-4 py-1.5 text-sm rounded-lg border border-slate-200 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 bg-slate-50">
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button class="p-2 text-slate-500 hover:bg-slate-100 rounded-lg relative">
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-blue-600 rounded-full"></span>
+          </button>
+          <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors flex items-center gap-2">
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            New Action
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Main View -->
+      <main class="p-8 space-y-8 flex-1 overflow-y-auto">
+        
+        <!-- Welcome Section -->
+        <div>
+          <h1 class="text-2xl font-bold text-slate-900">Dashboard Overview</h1>
+          <p class="text-slate-500 text-sm mt-1">Here is what is happening with your project today.</p>
+        </div>
+
+        <!-- Metric Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-slate-500">Total Views</p>
+              <h3 class="text-2xl font-bold text-slate-900 mt-1">24,512</h3>
+              <span class="text-xs font-semibold text-emerald-600 mt-2 inline-block">↑ 12% vs last month</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-slate-500">Active Users</p>
+              <h3 class="text-2xl font-bold text-slate-900 mt-1">1,429</h3>
+              <span class="text-xs font-semibold text-emerald-600 mt-2 inline-block">↑ 8% vs last month</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <i data-lucide="user-check" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-slate-500">Tasks Completed</p>
+              <h3 class="text-2xl font-bold text-slate-900 mt-1">98.2%</h3>
+              <span class="text-xs font-semibold text-blue-600 mt-2 inline-block">On track</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <i data-lucide="check-circle-2" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+            <div>
+              <p class="text-sm font-medium text-slate-500">System Status</p>
+              <h3 class="text-2xl font-bold text-slate-900 mt-1">Optimal</h3>
+              <span class="text-xs font-semibold text-emerald-600 mt-2 inline-block">All systems operational</span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+              <i data-lucide="activity" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Data Section / Table -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+          <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+            <h2 class="text-base font-semibold text-slate-900">Recent Activities</h2>
+            <button class="text-sm text-blue-600 font-medium hover:underline">View all</button>
+          </div>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-50 text-slate-500 text-xs uppercase font-medium border-b border-slate-100">
+                  <th class="py-3 px-6">Item</th>
+                  <th class="py-3 px-6">Category</th>
+                  <th class="py-3 px-6">Status</th>
+                  <th class="py-3 px-6">Date</th>
+                  <th class="py-3 px-6 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-sm">
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-4 px-6 font-medium text-slate-900">System Integration</td>
+                  <td class="py-4 px-6 text-slate-500">Development</td>
+                  <td class="py-4 px-6">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-blue-50 text-blue-600">In Progress</span>
+                  </td>
+                  <td class="py-4 px-6 text-slate-500">Aug 14, 2026</td>
+                  <td class="py-4 px-6 text-right">
+                    <button class="text-slate-400 hover:text-slate-600"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-4 px-6 font-medium text-slate-900">UI Refactor & Theme</td>
+                  <td class="py-4 px-6 text-slate-500">Design</td>
+                  <td class="py-4 px-6">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-emerald-50 text-emerald-600">Completed</span>
+                  </td>
+                  <td class="py-4 px-6 text-slate-500">Aug 13, 2026</td>
+                  <td class="py-4 px-6 text-right">
+                    <button class="text-slate-400 hover:text-slate-600"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50/50">
+                  <td class="py-4 px-6 font-medium text-slate-900">Database Optimization</td>
+                  <td class="py-4 px-6 text-slate-500">Infrastructure</td>
+                  <td class="py-4 px-6">
+                    <span class="px-2.5 py-1 text-xs font-medium rounded-full bg-amber-50 text-amber-600">Pending Review</span>
+                  </td>
+                  <td class="py-4 px-6 text-slate-500">Aug 12, 2026</td>
+                  <td class="py-4 px-6 text-right">
+                    <button class="text-slate-400 hover:text-slate-600"><i data-lucide="more-horizontal" class="w-4 h-4"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
